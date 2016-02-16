@@ -1,0 +1,11 @@
+def function(x, list):
+    if len(list) == 1:
+        if x < list:
+            return 0
+        else:
+            return 1
+    else:
+        if x < min(list):
+            return 0
+        else:
+            return 1+function(x-min(list), sorted(list)[1:])
