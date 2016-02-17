@@ -1,0 +1,20 @@
+#coding=utf-8
+# x=1 测试用
+# list=[1,2,3] 测试用
+def function(x,list):
+	list1 = sorted(list) #对商品列表进行排序
+	lenth = len(list1)
+	
+	if x < list1[0]:  #一个都买不起
+		return 0
+		
+	elif x >= sum(list1):    #全都买得起
+		return lenth
+	
+	else:              #买得起一部分
+		sum1 = 0
+		for i in range(0, lenth):
+			sum1 += list1[i]
+			if x < sum1:
+				return i
+				
