@@ -1,0 +1,34 @@
+#问题1
+def func(x,list):
+    total=0     #初始加和
+    num=0       #初始可购买商品数
+    list.sort()     #排序商品价格
+    if sum(list)<=x:    #若能全部购买，则返回list长度
+        return len(list)
+    while total<=x and num<len(list):   #保证不超出x,还有在list范围内
+        total+=list[num]
+        num+=1
+    return num-1
+    
+print(func(5,[3,8,1,2,3]))
+print(func(3,[2,1,5]))
+print(func(10,[1,1,1,1,2,5]))
+print(func(10,[5,10,3,2]))
+print(func(2,[3,8,10]))
+print(func(24,[3,8,10]))
+
+＃问题2
+def f(a):
+    a=list(range(1,a+1))    #转化为list
+    k=-1                    #初始化循环数
+    while len(a)>1:         #等于1退出循环，返回list
+        for i in range(3):  
+            if k==len(a)-1:
+                k=0
+            else: k+=1
+        del a[k]            #每推进3个人，删除1个
+        k-=1                #删除1人后退后1个序号
+    return a
+
+for number in [5, 3, 6]:
+    print("when N= ", number,  "\nOUTPUT= ",f(number))
