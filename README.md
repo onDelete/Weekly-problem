@@ -21,7 +21,7 @@
 		 return 商品个数
     	
     C:
-   	int function(int x,int array[]){
+   	int function(int x,int array[],int length){
     //你的程序
     return num;	
    	}
