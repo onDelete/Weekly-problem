@@ -1,0 +1,36 @@
+package meizhou;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class RoundTable {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int a = sc.nextInt();
+		int c =-1;
+		ArrayList<Integer> arr = new ArrayList<>();
+		for(int i = 1; i<a+1; i++){
+			arr.add(i);
+		}
+		
+		while(arr.size()>1){
+			for(int i =0; i<3 ;i++){
+				if(c == arr.size()-1){
+					c =0;
+				}
+				else{
+					c+=1;
+				}
+				
+			}
+			arr.remove(c);
+			c--;
+			
+		}
+		System.out.println(arr);
+		sc.close();
+		
+	}
+
+}
