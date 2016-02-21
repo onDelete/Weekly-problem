@@ -5,7 +5,7 @@
 
 2016/02/15
 请选择绿色按钮“New Pull Request”左边的Branch下拉选择week0.
-题目就在week0的主页上，做好后点击“New Pull Request”右边的newfile提交，名字就用你群里的qq名方便识别。
+题目就在week0的主页上，做好后点击刚刚选branch右边的newfile提交，名字就用你群里的qq名方便识别。
 Have fun！
 
 没有加进这个组来的小伙伴请让群里的朋友把你加进来：
