@@ -18,4 +18,4 @@
 注意：
 
 	没有加进这个组来的小伙伴请先让群里的朋友把你加进来（不然你是提交不了文件的！）：
-	 settings -> collaborators&teams ->最下面，默认都是admin这样大家都能加人了
+	 Weekly-problem主页上->settings -> collaborators&teams ->最下面，默认都是admin这样大家都能加人了
