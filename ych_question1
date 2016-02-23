@@ -1,0 +1,11 @@
+def function(x,list):
+    new_list = sorted(list)
+    num = 0
+    for i in new_list:
+        if x < i:
+            return num
+        else:
+            x -= i
+            num += 1
+            
+    return num
