@@ -1,0 +1,19 @@
+a = raw_input('>>>')
+# def func(a):
+#     b = []
+#     for i in range(len(a)-1, -1, -1):
+#         b.append(a[i])
+#     b = ''.join(b)
+#     if a == b:
+#         print 'palindrome!'
+#     return b
+# print func(a)
+
+def func(a):
+    alist = list(a)
+    alist.reverse()
+    b = ''.join(alist)
+    if a == b:
+        print 'palindrome!'
+    return b
+print func(a)
