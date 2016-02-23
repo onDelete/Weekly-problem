@@ -1,0 +1,8 @@
+a = str(raw_input('>'))
+b = a[::-1]
+for i in range(len(b)/2):
+    if b[i] != b[len(b)-i-1]:
+        flag = False
+        break
+if flag:
+    print "palindrome"
