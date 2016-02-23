@@ -1,0 +1,35 @@
+
+def f1(s):
+	if s==s[::-1]:
+		return"palindrome"
+	else: return s[::-1]
+
+def testf1():
+	print("problem1"),
+	assert(f1("ABC")=="CBA")
+	assert(f1("Hi,this is apple!")=="!elppa si siht,iH")
+	assert(f1("BAT360")=="063TAB")
+	assert(f1("QWER!@#$123")=="321$#@!REWQ")
+	assert(f1("1")=="palindrome")
+	assert(f1("ABCCBA")=="palindrome")
+	print("passed")
+
+testf1()
+
+def f2(s, list, num):
+	for i in range(num):		#num次数重组
+		result=""				      #每次重组前初始化
+		for elem in list:		  #重组
+			result+=s[elem]
+		s=result				      #替换重组结果到初始字符串
+
+	return result
+
+def testf2():
+	print("problem2"),
+	assert(f2("ABC", [2,0,1], 2)=="BCA")
+	assert(f2("ABCD", [3,2,1,0], 1)=="DCBA")
+	assert(f2("12345", [3,1,2,4,0], 1)=="42351")
+	print("passed")
+
+testf2()
