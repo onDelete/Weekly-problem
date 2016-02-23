@@ -15,5 +15,6 @@ def func(a):
     b = ''.join(alist)
     if a == b:
         print 'palindrome!'
-    return b
+    else:
+        return b
 print func(a)
