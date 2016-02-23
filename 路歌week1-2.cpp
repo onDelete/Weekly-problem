@@ -4,7 +4,7 @@
 using namespace std;
 
 /*转换程序*/
-string unlock(string &s, int A[], int num);
+string unlock(string s, int A[], int num);
 
 int main()
 {
@@ -22,7 +22,7 @@ int main()
         return 0;
 }
 
-string unlock(string &s, int A[], int num)
+string unlock(string s, int A[], int num)
 {
         /*测试转换次数是否合法*/
         assert(num >= 0);
