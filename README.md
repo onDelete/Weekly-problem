@@ -19,3 +19,21 @@
 
 	没有加进这个组来的小伙伴请先让群里的朋友把你加进来（不然你是提交不了文件的！）：
 	 Weekly-problem主页上->settings -> collaborators&teams ->最下面，默认都是admin这样大家都能加人了
+	 
+完成情况：
+	
+	ID-完成次数
+	
+	BingG-1
+	清水-1
+	abirdcfly-1
+	hsm225-1
+	AllenYoung-1
+	HeGuozhu-1
+	xudsir-1
+	xjs-js-1
+	ych-1
+	浮生-1
+	肆风-1
+
+继续努力！
