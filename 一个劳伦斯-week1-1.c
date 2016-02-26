@@ -1,4 +1,4 @@
-//Reverse_the_String
+//Reverse_the_String    ————    一个劳伦斯
 #include<stdio.h>
 #include<string.h>
 #define LENGTH 1000
