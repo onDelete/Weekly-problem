@@ -4,7 +4,7 @@
 
 void Reverse_the_String(char a_string[], char r_string[], unsigned long int a_length);
 
-int main()
+int main(int argc, const char * argv[])
 {
     char a_string[1000];
     char r_string[1000];
