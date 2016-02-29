@@ -1,39 +1,21 @@
 # Weekly-problem
 知乎编程学习群每周一题
 
+知乎编程学习群每周一题 Week 2 2016/2/29-2016/3/6
 
-2016/02/23
-群里的小伙伴们好，这里是每周给大家出一道算法的练习题，做完后可以直接commit到对应的branch。
+还是两题选做一题。
 
-现在是week1了，已经做好week0的同学但是在week0的页面上看不到你提交的文件说明你没有提交成功，请重新提交！
+问题1：
 
+给你一串包含'X'和'O'字符串，如"OXOOOXXXOXXOOOXXXOXO",问这个字符串中，与其中一个X直接相连的O最多有多少个？比如"OXOO",就有三个O与X相连。但是"OXOOOXOO"最多就是五个而不是六个，因为左边的X挡住了最左边的O。
 
-提交方法：
-
-    请选择绿色按钮“New Pull Request”左边的Branch下拉选择week1.
-    题目就在week1的主页上，做好后点击刚刚选branch右边的newfile提交，名字就用你群里的qq名方便识别。
-	Have fun！
-
-
-注意：
-
-	没有加进这个组来的小伙伴请先让群里的朋友把你加进来（不然你是提交不了文件的！）：
-	 Weekly-problem主页上->settings -> collaborators&teams ->最下面，默认都是admin这样大家都能加人了
-	 
-完成情况：
+	输入：字符串 输出：整数
 	
-	ID-完成次数
-	
-	BingG-1
-	清水-1
-	abirdcfly-1
-	hsm225-1
-	AllenYoung-1
-	HeGuozhu-1
-	xudsir-1
-	xjs-js-1
-	ych-1
-	浮生-1
-	肆风-1
+	例子：
+	输入:"OXO"			输出：2
+	输入:"OXOOXOXXOOOXO"	输出：3
+	输入:"OOXOOOXOXO"		输出：5
+	输入:"OOOOOOOOOO"	 	输出：0
+	输入:"XXX"			输出：0
 
-继续努力！
+
