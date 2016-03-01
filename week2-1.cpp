@@ -1,6 +1,6 @@
 //// 20160301知乎群week2.cpp : 定义控制台应用程序的入口点。
 //
-
+// setm git test 
 #include "stdafx.h"
 #include <iostream>
 #include <string>
