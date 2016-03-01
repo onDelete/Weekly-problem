@@ -1,0 +1,23 @@
+#!/usr/bin/env/python
+# -*- coding:utf-8 -*-
+
+def function(x, list):
+    n = 0
+    a = min(list) 
+    while a <= x:
+        a = min(list) #取出列表中的最小值
+        b = list.index(a) 
+        list.pop(b) #去掉取出的值
+        x -= a
+        n += 1
+    return n
+
+'''
+此处也可用sort()对list进行排序
+然后用x依顺序对列表中的元素做减法
+'''    
+
+if __name__ == '__main__':
+    x = int(input("entry your budget:"))
+    list = eval(input("entry your commidities:"))
+    print(function(x, list))
