@@ -9,7 +9,7 @@ public class Week2 {
 		System.out.println("string is: [[" + s + "]] ");
 		System.out.println("切分图片形式为:");
 		System.out.println("**********************************************");
-		fillArray(this.saw_arry, s, col);
+		createArray(s, col);
 		for (int i = 0; i < row; i++) {
 			for (int j = 0; j < col; j++) {
 				System.out.print(this.saw_arry[i][j]);
@@ -56,25 +56,29 @@ public class Week2 {
 		return max;
 	}
 	
-	private void fillArray(char[][] saw_arry, String str, int col) {
+	private void createArray(String str, int col) {
 		int len = str.length();
 		int row = len / col;
 		//判断指定col是否大于可填充行数
+		if (len % col != 0) {
+			row = row + 1;
+		}
 		if (row == 0) {
 			row = 1;
-		} else {
-			if (len % col != 0) {
-				row = row + 1;
-			}
 		}
 		this.row = row;
 		this.col = col;
 		System.out.println("row is:" + row + " col is:" + col);
-		fillArray(saw_arry, str, row, col);
+		this.saw_arry = new char[row][col];
+		fillArray(this.saw_arry, str);
 	}
 	
-	private void fillArray(char[][] saw_arry, String str, int row, int col) {
-		this.saw_arry = new char[row][col];
+	private void fillArray(char[][] fill_array, String str) {
+		fillArray(fill_array, str, this.row, this.col);
+	}
+	
+	private void fillArray(char[][] fill_array, String str, int row, int col) {
+		//saw_arry = new char[row][col];
 		char[] fillChar = str.toCharArray();
 		int x = 0, len = fillChar.length;
 		
@@ -82,9 +86,9 @@ public class Week2 {
 			for (int i = 0; i < row; i++) {
 				for (int j = 0; j < col; j++) {
 					if (x >= len) {
-						this.saw_arry[i][j] = default_fill;
+						fill_array[i][j] = default_fill;
 					} else {
-						this.saw_arry[i][j] = fillChar[x++];
+						fill_array[i][j] = fillChar[x++];
 					}
 				}
 			}
