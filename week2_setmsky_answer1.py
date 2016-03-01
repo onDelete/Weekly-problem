@@ -4,6 +4,8 @@
 
 # author: setm
 """
+Hello git? git push origin Week2
+git add ?
 解题思路整理如下:
 对字符串OXXXOOOXOO
 1. 计算O出现的次数,也就是X left边的O的出现次数
