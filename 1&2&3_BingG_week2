@@ -1,0 +1,113 @@
+#problem1
+def createdMap(s):          #helper function, 创建map用来储存每个单个"X"周围"O"的个数
+	k=1                     #初始化map的key值
+	countMap = dict()
+	for i in range(len(s)):     #循环每个字符
+		if s[i]== "O":
+			countMap[k]= countMap.get(k, 0)+ 1
+			countMap[k+1]= countMap.get(k+1, 0)+ 1     #同时赋值是因为"OXOXOO"这种情况下中间的"O"需要被同时考虑到左右2边"X"中去
+		elif s[i]==s[i+1]=="X":     
+			k+=1
+		elif s[i]=="X":
+			k+=1
+	return countMap
+
+def dOX(s):     #取最大值，因为不知道map中value的取最大值有没有更快的方法，只能用土办法
+	if "X" not in s or "O" not in s:
+		return 0
+	maxOs=0
+	dmap= createdMap(s)
+	for key in dmap:
+		if maxOs< dmap[key]:
+			maxOs= dmap[key]
+	return maxOs
+
+def testdOX():
+	print("problem1"),
+	assert(dOX("OXO")== 2)
+	assert(dOX("OXOOXOXXOOOXO")== 4)
+	assert(dOX("OOXOOOXOXO")== 5)
+	assert(dOX("OOOOOOOOOO")== 0)
+	assert(dOX("XXX")== 0)
+	print("passed")
+
+testdOX()
+
+#problem 2
+def createddList(s,n):      #helper function, 创建图（实则2d list)
+	L=[]
+	rows= int(len(s)/n)
+	for i in range(rows):
+		L.append(s[:n])
+		s= s[n:]
+	return L
+
+def numberOfOs(ddList,row,col):     #helper function, 得出"X"周围"O"的个数
+	counts=0
+	if row-1>=0 and ddList[row-1][col]=="O":
+		counts+=1
+	if row+1<len(ddList) and ddList[row+1][col]=="O":
+		counts+=1
+	if col-1>=0 and ddList[row][col-1]=="O":
+		counts+=1
+	if col+1<len(ddList[0]) and ddList[row][col+1]=="O":
+		counts+=1
+	return counts
+
+def createddMap(s,n):           #创建key值为每个"X"，value为周围"O"个数的map
+	ddList= createddList(s,n)
+	countMap=dict()
+	rows= len(ddList)
+	cols= len(ddList[0])
+	for row in range(rows):
+		for col in range(cols):
+			if ddList[row][col]=="X":
+				counts= numberOfOs(ddList,row,col)
+				countMap[str(row)+str(col)]=counts
+	return countMap
+
+def ddOX(s,n):              #取最大值
+	if "X" not in s:
+		return 0
+	maxOs=0
+	ddmap= createddMap(s,n)
+	for key in ddmap:
+		if maxOs< ddmap[key]:
+			maxOs= ddmap[key]
+	return maxOs
+
+
+def testddOX():                 #题目中第二个列子似乎不对啊，可能我理解错啦
+	print("problem2"),
+	assert(ddOX("OXOOOXOXOXOXXOX",5)== 3)
+	assert(ddOX("XOOXOOOOOOXOOXOXXXOX",5)== 4)
+	print("passed")
+
+testddOX()
+
+#problem3
+
+def swap(a, i, j):
+	(a[i], a[j])= (a[j], a[i])
+
+def bubbleSort(a):
+	end = len(a)
+	swapped = True
+	while swapped:
+		swapped= False
+		for i in range(1, end):
+			if (a[i-1] > a[i]):
+				swap(a, i-1, i)
+				swapped = True
+		end-=1
+	return a
+
+def testbubbleSort():
+	print("problem3"),
+	assert(bubbleSort([3,2,1])==[1,2,3])
+	assert(bubbleSort([1,5,4,6,7])==[1,4,5,6,7])
+	assert(bubbleSort([0,2,4,5,7])==[0,2,4,5,7])
+	assert(bubbleSort([1])==[1])
+	print("passed")
+
+testbubbleSort()
