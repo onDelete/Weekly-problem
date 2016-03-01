@@ -4,7 +4,6 @@ public class Week2 {
 	private int col;
 	private int row;
 	private char default_fill = '-';
-	private int max = 0;
 	
 	public void printArray(String s, int col) {
 		System.out.println("string is: [[" + s + "]] ");
@@ -18,31 +17,29 @@ public class Week2 {
 			System.out.println();
 		}
 		System.out.println("**********************************************");
-		search();
-		System.out.println("最大O是:" + max);
+		System.out.println("最大O是:" + search());
 		System.out.println();
 	}
 	
-	public void search() {
+	private int search() {
+		int max = 0;
 		for (int i = 0; i < row; i++) {
-			
+			//根据  Roadsong 添加等于4 跳出循环处理
+			if (max == 4) 
+				break;
 			for (int j = 0; j < col; j++) {
 				int o_size = 0;
 				//对矩阵进行处理
 				if (saw_arry[i][j] == 'X') {
 					//开始计算 x 对应位的 O数量
-					if (i > 0 && i < row) {
-						if (saw_arry[i-1][j] == 'O') {
-							o_size++;
-						}
+					if (i > 0 && i < row && saw_arry[i-1][j] == 'O') {
+						o_size++;
 					} 
 					if (i+1 < row && saw_arry[i+1][j] == 'O') {
 						o_size++;
 					}
-					if (j > 0 && j < col) {
-						if (saw_arry[i][j-1] == 'O') {
-							o_size++;
-						}
+					if (j > 0 && j < col && saw_arry[i][j-1] == 'O') {
+						o_size++;
 					}
 					
 					if (j+1 < col && saw_arry[i][j+1] == 'O') {
@@ -56,6 +53,7 @@ public class Week2 {
 			}
 			
 		}
+		return max;
 	}
 	
 	private void fillArray(char[][] saw_arry, String str, int col) {
@@ -65,7 +63,7 @@ public class Week2 {
 		if (row == 0) {
 			row = 1;
 		} else {
-			if (len % row != 0) {
+			if (len % col != 0) {
 				row = row + 1;
 			}
 		}
