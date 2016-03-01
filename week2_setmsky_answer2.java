@@ -1,6 +1,6 @@
 public class Week2 {
 	
-	private char[][] saw_arry = null;;
+	private char[][] saw_arry = null;
 	private int col;
 	private int row;
 	private char default_fill = '-';
