@@ -2,7 +2,7 @@
 知乎编程学习群每周一题
 
 
-2016/02/23
+2016/2/29
 群里的小伙伴们好，这里是每周给大家出一道算法的练习题，做完后可以直接commit到对应的branch。
 
 现在是week1了，已经做好week0的同学但是在week0的页面上看不到你提交的文件说明你没有提交成功，请重新提交！
@@ -24,16 +24,25 @@
 	
 	ID-完成次数
 	
-	BingG-1
-	清水-1
-	abirdcfly-1
-	hsm225-1
-	AllenYoung-1
-	HeGuozhu-1
-	xudsir-1
-	xjs-js-1
-	ych-1
+	BingG-2
+	清水-2
+	abirdcfly-2
+	hsm225-2
+	AllenYoung-2
+	HeGuozhu-2
+	xudsir-2
+	xjs-js-2
+	ych-2
 	浮生-1
 	肆风-1
-
+	Arkowen-1
+	zerods-1
+	Epona-1
+	luckyScript-1
+	setmsky-1
+	nilsguo-1
+	一个劳伦斯-1
+	洋葱-1
+	路歌-1
+	
 继续努力！
