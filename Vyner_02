@@ -1,0 +1,24 @@
+#!/usr/bin/env/python3
+# -*- coding:utf-8 -*-
+
+def function(N):
+    if N <= 0: #判断N的范围
+        return 0
+    else:
+        List = [x for x in range(1, N+1)] #创建队列
+        while len(List) > 1:
+            if len(List) == 2:
+                List = List[1:] #当队列只剩两人时
+            else:
+                List = List[3:] + List[:2] #去掉第三个人，将前两个元素放到列表最后
+        return List
+
+'''
+搜索了约瑟夫环问题的相关资料
+似乎使用模运算是比较万能且思路清晰的解法
+尤其是当间隔数为未知数K时
+'''
+
+if __name__ == '__main__':
+    N = int(input('Please enter numbers:'))
+    print (function(N))
