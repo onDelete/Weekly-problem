@@ -3,7 +3,13 @@
 # -*- coding: utf-8 -*-
 
 # author: setm
-
+"""
+解题思路整理如下:
+对字符串OXXXOOOXOO
+1. 计算O出现的次数,也就是X left边的O的出现次数
+2. 对于XX 这样的,统一考虑为O为0的情况,也就是 left为0
+3. 每次遇到X 计算上次O和这次O出现的和 最大值比较
+"""
 def find_max_char_num(raw_str):
 	# raw_str = raw_input('Enter your string: ')
 	print 'input:', raw_str, "\t output:",
@@ -11,23 +17,24 @@ def find_max_char_num(raw_str):
 	#if 'O' not in raw_str or 'X' not in raw_str:
 		#print '0'
 		#return;
-	index = 0
+	cur_count = 0
 	# 
 	max = 0
-	o_sign = 0
+	old_count = 0
 	# loop raw_str
 	for rs in raw_str:
 		if rs == 'O':
-			index = index + 1
+			cur_count = cur_count + 1
 		elif rs == 'X':
-			if max < (index + o_sign):
-				max = index + o_sign
+			if max < (cur_count + old_count):
+				max = cur_count + old_count
 			
-			o_sign = index
-			index = 0
-	if index != len(raw_str):
-		if max < (index + o_sign):
-			max = index + o_sign
+			old_count = cur_count
+			cur_count = 0
+	# 处理全部为OOOOOOOO的时候 跳过 . 同时用来处理 XOOOO 这样的结尾数据
+	if cur_count != len(raw_str):
+		if max < (cur_count + old_count):
+			max = cur_count + old_count
 	print max 
 	
 def test_answer1():
