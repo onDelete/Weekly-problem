@@ -13,7 +13,7 @@ def function(string):
 	for i in string:
 		stringArray.append(i)
 	for i in range(0,number):
-		outArray = len(stringArray)*[]
+		outArray = []
 		for j in array:
 			outArray.append(stringArray[j])
 		stringArray = outArray
