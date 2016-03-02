@@ -1,0 +1,20 @@
+这两个解法不一定是最优的，是我随手写的给不会做的同学一个解题思路，不会做的同学看完最好自己再做一遍。
+1:
+def function(string):
+	outString ="" 
+	for i in string: 
+		outString=i+outString
+	if(outString==string):
+		return "palindrome"
+	return outString
+	
+2.def function(string,array,number):
+	stringArray = []
+	for i in string:
+		stringArray.append(i)
+	for i in range(0,number):
+		outArray = len(stringArray)*[]
+		for j in array:
+			outArray.append(stringArray[j])
+		stringArray = outArray
+	return "".join(stringArray)
