@@ -5,7 +5,7 @@ def getNum(x, goods):
     goods.sort()
     while cost <= x and num < (len(goods)):
         cost += goods[num]
-        if cost <= x :
+        if cost <= x:
             num += 1
 
-    return num - 1
+    return num
