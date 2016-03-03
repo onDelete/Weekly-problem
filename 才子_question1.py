@@ -3,8 +3,9 @@ def getNum(x, goods):
     num = 0
     cost = 0
     goods.sort()
-    while cost <= x and num <= (len(goods)-1):
+    while cost <= x and num < (len(goods)):
         cost += goods[num]
-        num += 1
+        if cost <= x :
+            num += 1
 
     return num - 1
