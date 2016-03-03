@@ -1,4 +1,5 @@
 def last(x, step):
+    nums = []
     if x <= 0 or step <= 1:return 'params error'
     
     temp_step = step - 1
