@@ -2,7 +2,7 @@
 *Copyright © 2015年 Dragon. All rights reserved.
 *FileName: QQGroup_week_2_Q1.c
 *Author: dragon
-*Description:通过循环遍历每一个元素若是O则跳过。若是X则检查这个元素相邻的元素若是O则计数，若是X则退出判断；
+*Description:通过循环遍历每一个元素若是o则跳过。若是x则检查这个元素相邻的元素若是o则计数，若是x则退出判断；
 *Version : 1.0
 *Input: 任意一串只有'o','x'的字符串；
 *Output: 输出就是所问
@@ -16,6 +16,7 @@
 int main() {
 	char str[N];
 	int i,j,k,m,n,max = 0,num = 0;
+	printf("输入只有‘o’ ‘x’ 的一串字符")
 	gets(str);
 	//从第一个元素开始判断
 	for(i = 0;i<strlen(str);i++){
