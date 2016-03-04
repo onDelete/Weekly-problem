@@ -23,10 +23,10 @@ public class Week2 {
 	
 	private int search() {
 		int max = 0;
+		//因为增加了 填充数据,所以在数组选到标志数据时候
+		boolean isFinish = false;
 		for (int i = 0; i < row; i++) {
-			//根据  Roadsong 添加等于4 跳出循环处理
-			if (max == 4) 
-				break;
+			
 			for (int j = 0; j < col; j++) {
 				int o_size = 0;
 				//对矩阵进行处理
@@ -50,6 +50,18 @@ public class Week2 {
 				if (max < o_size) {
 					max = o_size;
 				}
+				if (saw_arry[i][j] == default_fill)
+				{
+					isFinish = true;
+					break;
+				}
+			}
+			//根据  Roadsong 添加等于4 跳出循环处理
+			if (max == 4) 
+				break;
+			if (isFinish)
+			{
+				break;
 			}
 			
 		}
