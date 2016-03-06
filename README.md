@@ -27,26 +27,28 @@
 	
 	ID-完成次数
 	
-	BingG-2
-	清水-2
+	BingG-3
+	清水-3
+	ych-3
+	HeGuozhu-3
 	abirdcfly-2
 	hsm225-2
 	AllenYoung-2
-	HeGuozhu-2
 	xudsir-2
 	xjs-js-2
-	ych-2
+	setmsky-2
+	Epona-2
+	路歌-2
+	明月-1
 	浮生-1
 	肆风-1
 	Arkowen-1
 	zerods-1
-	Epona-1
 	luckyScript-1
-	setmsky-1
 	nilsguo-1
 	一个劳伦斯-1
 	洋葱-1
-	路歌-1
 	Vyner-1
-	
+	jxskiss-1
+	郑智-1
 继续努力！
