@@ -2,14 +2,9 @@
 知乎编程学习群每周一题
 
 
-2016/2/29
+2016/3/6
 群里的小伙伴们好，这里是每周给大家出一道算法的练习题，做完后可以直接commit到对应的branch。
 
-现在是week2了，已经做好week1的同学但是在week1的页面上看不到你提交的文件说明你没有提交成功，请重新提交！
-
-	Week1答案：
-	这两个解法不一定是最优的，是我随手写的给不会做的同学一个解题思路，不会做的同学看完最好自己再做一遍。
-	https://github.com/Zhihu-Programming-Group/Weekly-problem/blob/Week1/Week1%20solution
 
 提交方法：
 
@@ -23,7 +18,7 @@
 	没有加进这个组来的小伙伴请先让群里的朋友把你加进来（不然你是提交不了文件的！）：
 	 Weekly-problem主页上->settings -> collaborators&teams ->最下面，默认都是admin这样大家都能加人了
 	 
-完成情况：
+完成情况：(如果你的信息不对请联系我）
 	
 	ID-完成次数
 	
