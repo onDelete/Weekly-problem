@@ -77,10 +77,10 @@ class ProblemTwo(object):
 if __name__ == '__main__':
     problems = filter(lambda x: x.startswith('Problem'), dir())
     for prob in problems:
-        prob = eval(prob)
         print('\nTest for %s:' % prob)
+        prob = eval(prob)()
         for input, answer in prob.testdata:
-            output = prob().solve(input)
+            output = prob.solve(input)
             print('%s: input: %s (answer: %s), output: %s' % (
                 'passed' if output == answer else 'failed',
                 input, answer, output))
