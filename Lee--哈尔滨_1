@@ -1,0 +1,25 @@
+#!/usr/bin/env python
+# -*- coding=utf-8 -*-
+
+"如何挑选春节礼物"
+
+
+def choiceGift(money, gifts):
+
+    ''' 此人手头的钱数是 money，
+    gifts是礼物的一个list，第i项是第i个商品的价格'''
+
+    num = 0
+    gifts.sort()
+    for gift in gifts:
+        money -= gift
+        if money >= 0:
+            num += 1
+        else:
+            break
+    return num
+
+if __name__ == "__main__":
+    print choiceGift(10,[2,1,3,1,6])
+    print choiceGift(10,[1,3,2])
+    print choiceGift(1,[2,5,3,4,6])
