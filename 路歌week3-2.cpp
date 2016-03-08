@@ -4,20 +4,25 @@ using namespace std;
 
 int main()
 {
+	
   	stack<char> a;
   	stack<char> b; 
   	char c;
+
 
         while((c = getchar()) != EOF && c != '\n') {
                 a.push(c);
         }
 
+
         while((c = getchar()) != EOF && c != '\n') {
                 b.push(c);
         }
 	
+	
   	bool key = false;
   	while(b.empty() == false || a.empty() == false) {
+  	
   	
   		/* 两个栈顶相同时都弹出 */
 		if(b.top() == a.top())  {
@@ -37,7 +42,7 @@ int main()
 		}
 		
 		    
-		/* 若a栈为空切b栈不为空，key赋值为假，退出循环 */
+		/* 若a栈为空且b栈不为空，key赋值为假，退出循环 */
 	        if(a.empty() == true && b.empty() == false) {
 	        	key = false;
 	        	break;
@@ -45,6 +50,7 @@ int main()
 	    	
 	    	
 	  }
+	
 	
 	/* 根据key的值输出最后结果，key为真输出1，key为假输出0 */
 	if(key == true)
