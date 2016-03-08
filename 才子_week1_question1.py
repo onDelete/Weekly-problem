@@ -12,7 +12,4 @@ str1 = 'palindrome'
 if function1(str) :
     print str1
 else :
-    str1 = ''
-    #for i str[::-1] :
-    #    str1 += i
     print str[::-1];
