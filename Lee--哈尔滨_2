@@ -1,0 +1,26 @@
+#!/usr/bin/env python
+# -*- coding=utf-8 -*-
+
+"圆桌游戏"
+
+
+def roundTable(num):
+
+    ''' num是人数'''
+
+    assert num > 0
+
+    peoples = []
+    for i in range(num):
+        peoples.append(i+1)
+
+    while len(peoples) >= 3:
+        peoples = peoples[3:] + peoples[:2]
+
+    return peoples[1]
+
+if __name__ == "__main__":
+    print roundTable(6)
+    print roundTable(7)
+    print roundTable(2)
+    print roundTable(0)
