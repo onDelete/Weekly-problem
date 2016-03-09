@@ -16,30 +16,58 @@
 '''
 
 
+# def solution(str):
+#     i = 0
+#     amax = 0
+#     while i < len(str):
+#         if str[i] == 'X':
+#             j = i
+#             k = 0
+#             while j != 0 and str[j-1] != 'X':
+#                 j -= 1
+#                 k += 1
+#                 if j == 0:
+#                     break
+#             j = i
+#             while j != len(str)-1 and str[j+1] != 'X':
+#                 k += 1
+#                 j += 1
+#                 if j == len(str):
+#                     break
+#             if k > amax:
+#                 amax = k
+#         i += 1
+#     return amax
+
+# 改进 两方逼近
 def solution(str):
-    i = 0
-    amax = 0
-    while i < len(str):
-        if str[i] == 'X':
-            j = i
-            k = 0
-            while j != 0 and str[j-1] != 'X':
-                j -= 1
-                k += 1
-                if j == 0:
-                    break
-            j = i
-            while j != len(str)-1 and str[j+1] != 'X':
-                k += 1
-                j += 1
-                if j == len(str):
-                    break
-            if k > amax:
-                amax = k
-        i += 1
+    l = 0
+    r = len(str) - 1
+    lmax = rmax = amax = 0
+    LL = LR = RL = RR = 0
+    if str == 'O'*len(str):
+        return 0
+    while l <= r:
+        while l <= r and str[l] != 'X':
+            LR += 1
+            l += 1
+        while l <= r and str[r] != 'X':
+            RL += 1
+            r -= 1
+        lmax = LL + LR
+        rmax = RL + RR
+        amax = max(lmax, rmax, amax)
+        LL = LR
+        LR = 0
+        RR = RL
+        RL = 0
+        l += 1
+        r -= 1
+        if l-r == 2 and str[l-1] == "X":
+            amax = max(amax,RR + LL)
+        elif l-r == 2 and str[l-1] == "O":
+            amax = max(amax,RR + LL + 1)
     return amax
-
-
 
 
 str ='OXO'
