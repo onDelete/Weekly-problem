@@ -26,52 +26,6 @@ XXXOX
 显而易见，输出最小是0，最大只可能是4.
 '''
 
-# def solution(str, num):
-#     cow = len(str) / num #行数
-#     newstr = {} #为什么[]不可以
-#     for i in range(cow):
-#         newstr[i] = str[i*num:(i+1)*num]
-#     for i in range(cow):
-#         p = 0 # 每行遍历
-#         amax = 0 # 最值
-#         while p < num:
-#             print '(%s,%s)' %(i,p),
-#             # print 'p',p,'i',i
-#             if newstr[i][p] == 'X':
-#                 j = p
-#                 k = 0
-#                 while j != 0 and newstr[i][j-1] != 'X':
-#                     j -= 1
-#                     k += 1
-#                     if j == 0:
-#                         break
-#                 print 'z',k,
-#                 j = p
-#                 while j != num-1 and newstr[i][j+1] != 'X':
-#                     k += 1
-#                     j += 1
-#                     if j == num:
-#                         break
-#                 print 'y',k,
-#                 j = 0
-#                 while j != 0 and newstr[j-1][p] != 'X':
-#                     j -= 1
-#                     k += 1
-#                     if j == 0:
-#                         break
-#                 print 's',k,
-#                 j = i
-#                 while j != cow - 1 and newstr[j+1][p] != 'X':
-#                     j += 1
-#                     k += 1
-#                     if j == cow:
-#                         break
-#                 print 'x',k
-#                 if k > amax:
-#                     amax = k
-#                 # print 'amax',amax
-#             p += 1
-#     return amax
 
 
 # # 考虑深度的话
@@ -155,6 +109,7 @@ def solution(str, num):
                 zmax = cmax
     return zmax
 
+# 改进两方向遍历，O(n)算法类似01题改进算法。参见abirdcfly_01.py
 
 print solution("OXOOOXOXOXOXXOX", 5)  # 3
 print solution("OXXOXOOXOXOXOOXOOXOX", 10)  # 2
