@@ -1,0 +1,43 @@
+#!/usr/bin/env python
+# -*- coding=utf-8 -*-
+
+
+def getFlipStr(str):
+
+    "翻转字符串"
+
+    flipStr = str[::-1]
+    if str == flipStr:
+        return "palindrome"
+    else:
+        return flipStr
+
+def crackPwd(str, strList):
+
+    '''取每次解码的值'''
+
+    strNew = ""
+    for i in range(len(str)):
+        strNew += str[strList[i]]
+    return strNew
+
+def getText(str, strList, num):
+
+    '''对原文进行num次解码'''
+    
+    for i in range(num):
+        str = crackPwd(str,strList)
+
+    return str
+
+if __name__ == "__main__":
+    print "第一题结果------"
+    print getFlipStr("ABA")
+    print getFlipStr("Hi,this is apple!")
+    print getFlipStr("QWER!@#$123")
+    print getFlipStr("ABCWDBA")
+
+    print "第二题结果------"
+    print getText("ABC", [2,0,1], 2)
+    print getText("ABCD", [3,2,1,0], 1)
+    print getText("12345", [3,1,2,4,0], 1)
