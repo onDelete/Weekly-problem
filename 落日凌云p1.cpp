@@ -25,10 +25,12 @@ int Week0Problem1(double &Charge, std::vector<double> &Price)
 	std::stable_sort(Price.begin(), Price.end(),
 		[](const double &p, const double &q) {return p <= q; });
 	int i = 0;
+	double tp = 0;
 	for (auto &e : Price)
 	{
+		tp = tp + e;
 		//如果可以买当前商品
-		if (Charge - e >= 0)
+		if (tp <= Charge)
 		{
 			++i;
 		}
