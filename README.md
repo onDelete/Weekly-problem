@@ -1,49 +1,20 @@
-# Weekly-problem
 知乎编程学习群每周一题
 
+知乎编程学习群每周一题 Week 4 2016/3/14 - 2016/3/20
 
-2016/3/6
-群里的小伙伴们好，这里是每周给大家出一道算法的练习题，做完后可以直接commit到对应的branch。
-
-
-提交方法：
-
-    请选择绿色按钮“New Pull Request”左边的Branch下拉选择week1.
-    题目就在week1的主页上，做好后点击刚刚选branch右边的newfile提交，名字就用你群里的qq名方便识别。
-	Have fun！
+看大家兴致都减弱了，这周给大家添几个逻辑问题换换脑子
 
 
-注意：
+1.著名七桥问题
 
-	没有加进这个组来的小伙伴请先让群里的朋友把你加进来（不然你是提交不了文件的！）：
-	 Weekly-problem主页上->settings -> collaborators&teams ->最下面，默认都是admin这样大家都能加人了
-	 
-完成情况：(如果你的信息不对请联系我）
+	有这么一个地方，每个桥只能走一遍，请问你能不能一次把全部桥走完呢？写出你的证明，别上网搜答案哦。
+	看图： http://a2.att.hudong.com/68/93/01300000089793120693931525342.jpg
 	
-	ID-完成次数
+2.小孩会不会控制鳄鱼？
+
+	没有不会法术又可以控制鳄鱼的人。
+	有逻辑的人都不讨厌。
+	没逻辑的会法术。
+	小孩都是讨厌的。
 	
-	BingG-3
-	清水-3
-	ych-3
-	HeGuozhu-3
-	abirdcfly-2
-	hsm225-2
-	AllenYoung-2
-	xudsir-2
-	xjs-js-2
-	setmsky-2
-	Epona-2
-	路歌-2
-	明月-1
-	浮生-1
-	肆风-1
-	Arkowen-1
-	zerods-1
-	luckyScript-1
-	nilsguo-1
-	一个劳伦斯-1
-	洋葱-1
-	Vyner-1
-	jxskiss-1
-	郑智-1
-继续努力！
+3.
