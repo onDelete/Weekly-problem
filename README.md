@@ -24,7 +24,7 @@
 	
 	BingG-4
 	HeGuozhu-4
-	清水-3
+	清水-4
 	ych-3
 	setmsky-3
 	Epona-3
