@@ -6,6 +6,7 @@
 //* 这谁知道小孩能不能控制鳄鱼啊。
 #include <iostream>
 #include <vector>
+#include "week4.h"
 
 long long MyFibonacciNumber(int i)
 {
@@ -35,5 +36,12 @@ int main()
 	//* 迭代函数速度慢的感人，n>=40就能感受到明显区别，n=80等了好久都没出来，
 	//* 我一直以为是我写错了
 	//* std::cout << MyFibonacci_Number(n) << std::endl;
+	//* 第四题：
+	std::vector<int> vi;
+	std::cout << "请输入数列，按q+ <enter>取消输入：" << std::endl;
+	while (std::cin >> n)
+		vi.push_back(n);
+	LongEqual2Zero lv(vi);
+	std::cout << FindFunction(lv);
 	return 0;
 }
