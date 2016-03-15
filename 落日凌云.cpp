@@ -6,8 +6,6 @@
 //* 这谁知道小孩能不能控制鳄鱼啊。
 #include <iostream>
 #include <vector>
-#include <memory>
-
 
 long long MyFibonacciNumber(int i)
 {
@@ -31,6 +29,7 @@ long long MyFibonacciNumber(int i)
 int main()
 {
 	int n;
+	std::cout << "费波拉契数列第几项？（最高第93项）" << std::endl;
 	std::cin >> n;
 	std::cout << MyFibonacciNumber(n) << std::endl;
 	//* 迭代函数速度慢的感人，n>=40就能感受到明显区别，n=80等了好久都没出来，
