@@ -6,7 +6,7 @@
 //* 这谁知道小孩能不能控制鳄鱼啊。
 #include <iostream>
 #include <vector>
-#include "week4.h"
+#include <algorithm>
 
 long long MyFibonacciNumber(int i)
 {
@@ -27,10 +27,37 @@ long long MyFibonacciNumber(int i)
 //* 		return MyFibonacci_Number(i - 1) + MyFibonacci_Number(i - 2);
 //* }
 
+//讲道理C++编译器肯定会说：妈的智障
+std::vector<int>::size_type FindFunction(std::vector<int> &vi)
+{
+	//* 如果所有数字都是正/负数，直接返回0
+	auto temp = std::find_if(vi.begin(), vi.end(), [](const int i) {return i > 0; });
+	auto temp2 = std::find_if(vi.begin(), vi.end(), [](const int i) {return i < 0; });
+	if (temp == vi.end() || temp2 == vi.end())
+		return 0;
+	else
+	{
+		//* 穷举
+		for (std::vector<int>::size_type vs = vi.size(); vs > 1; vs--)
+		{
+			for (std::vector<int>::size_type j = 0; j < vi.size() + 1 - vs; j++)
+			{
+				int flag = 0;
+				for (std::vector<int>::size_type k = j; k < vs + j; k++)
+				{
+					flag += vi.at(k);
+				}
+				if (!flag)
+					return vs;
+			}
+		}
+	}
+}
+
 int main()
 {
 	int n;
-	std::cout << "费波拉契数列第几项？（最高第93项）" << std::endl;
+	std::cout << "斐波拉契数列第几项？（最高第93项）" << std::endl;
 	std::cin >> n;
 	std::cout << MyFibonacciNumber(n) << std::endl;
 	//* 迭代函数速度慢的感人，n>=40就能感受到明显区别，n=80等了好久都没出来，
@@ -41,7 +68,6 @@ int main()
 	std::cout << "请输入数列，按q+ <enter>取消输入：" << std::endl;
 	while (std::cin >> n)
 		vi.push_back(n);
-	LongEqual2Zero lv(vi);
-	std::cout << FindFunction(lv);
+	std::cout << FindFunction(vi);
 	return 0;
 }
