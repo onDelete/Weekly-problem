@@ -1,0 +1,38 @@
+#P1
+每个陆地上的桥都是奇数个，所以走不通
+
+#p2
+小孩->讨厌的->没逻辑->会法术->可以控制鳄鱼
+
+#P3
+def nthFib(n):
+	fibMap = dict()
+	fibMap[0] = 1
+	fibMap[1] = 1
+	if n < 2: return 1
+	for i in range(2, n+1):
+		fibMap[i] = fibMap[i-1] + fibMap[i-2]
+	return fibMap[n]
+
+print("to test p3 up to 10th fibNumber")
+for i in range(10):
+	print(nthFib(i))
+
+
+
+#P4
+def longestSumToZero(L):
+	maxCount=0
+	for i in range(len(L)):
+		for k in range(i+1, len(L)):  #i+1 was to not considering sigle 0
+			if sum(L[i:k+1])==0:
+				if k-i+1>maxCount:
+					maxCount=k-i+1
+	return maxCount
+
+print("to test p4")
+print(longestSumToZero([2,-2]))
+print(longestSumToZero([0,1,2,3,-1,-3,-1,5]))
+print(longestSumToZero([0,1,2,3]))
+print(longestSumToZero([1,1,1,1,1,1,-3,1,1,1,1,-4]))
+print(longestSumToZero([1,-1,2,3,-2,-1]))
