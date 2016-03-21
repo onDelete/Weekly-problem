@@ -1,9 +1,6 @@
 //* 1.无解。4 + 1 + 2，中间那个1必须走两遍或者不走才能把右边的2都利用上。【google了一下……好高端】
 //* 2.前提不足以回答问题。小孩都是讨人厌的 + 有逻辑的人都不讨人厌 = 小孩都是没逻辑的 + 没逻辑的（都）会法术 
-//* = 小孩会法术 + 没有不会法术又可以控制鳄鱼的人 = Unknown.
-//* 这还是没办法给出结果啊，没有不会法术又可以控制鳄鱼的人的意思就是有三种人：【会法术 + 会控制鳄鱼】、
-//* 【会法术但不会控制鳄鱼】、【不会法术且不会控制鳄鱼】。
-//* 这谁知道小孩能不能控制鳄鱼啊。
+//* = 小孩会法术 + 会法术的都可以控制鳄鱼 = 小孩会控制鳄鱼.
 #include <iostream>
 #include <vector>
 #include <algorithm>
@@ -11,11 +8,16 @@
 long long MyFibonacciNumber(int i)
 {
 	std::vector<long long> vll{ 1,1,2 };
-	for (int j = 3; j <= 93; j++)
+	//* 由于long long 能存储的上限，因此限制i不能大于93
+	if (i <= 93)
 	{
-		vll.push_back(vll.at(j - 2) + vll.at(j - 1));
+		for (int j = 3; j <= i; j++)
+		{
+			vll.push_back(vll.at(j - 2) + vll.at(j - 1));
+		}
+		return vll.at(i);
 	}
-	return vll.at(i);
+	return -1;
 }
 
 //* 讲道理迭代没那么好用
@@ -27,7 +29,7 @@ long long MyFibonacciNumber(int i)
 //* 		return MyFibonacci_Number(i - 1) + MyFibonacci_Number(i - 2);
 //* }
 
-//讲道理C++编译器肯定会说：妈的智障
+//* 讲道理C++编译器肯定会说：妈的智障
 std::vector<int>::size_type FindFunction(std::vector<int> &vi)
 {
 	//* 如果所有数字都是正/负数，直接返回0
