@@ -25,7 +25,7 @@
 //* 例子 :
 //* 	输入 : "abc" 输出：4
 //* 	输入 : "zxy" 输出 : 73
-//* 	输入 : "cccdca" 输出：17
+//* 	输入 : "cccdca" 输出：14
 
 #include <iostream>
 #include <vector>
