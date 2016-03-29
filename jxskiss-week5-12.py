@@ -68,6 +68,29 @@ class ProblemOne(object):
                 count=cnts[c].count + 1
             )
         return sum((ord(k)-cls.ZERO) * v.larger for k, v in cnts.items())
+        
+    @classmethod
+    def function4(cls, string):
+        """Use the simple Counter class."""
+        cnts = sorted(Counter(string.lower()).items())
+        mysum = 0
+        for idx, (char, cnt) in enumerate(cnts):
+            mysum += (ord(char)-cls.ZERO) * cnt * sum(x[1] for x in cnts[idx+1:])
+        return mysum
+
+    @classmethod
+    def function5(cls, string):
+        """Common loops."""
+        sorted_string = sorted(string.lower())
+        length = len(sorted_string)
+        mysum = 0
+        current_char, current_cnt = sorted_string[0], 0
+        for idx, char in enumerate(sorted_string):
+            if char != current_char and current_cnt:
+                mysum += (ord(current_char)-cls.ZERO) * current_cnt * (length-idx)
+                current_char, current_cnt = char, 0
+            current_cnt += 1
+        return mysum
 
     def solve(self, *args):
         return self.function1(*args)
