@@ -159,19 +159,19 @@ class Rabbit(Grassland):
         return cls._count - 2
 
     @classmethod
-    def populate(cls, eating=Grass):
-        x = eating.can_be_eaten()
+    def populate(cls, food=Grass):
+        x = food.can_be_eaten()
         # 只能吃偶数个，不能吃奇数个
         # 如果草多兔子少，按照兔子最多能吃掉的数量吃，其他草继续繁殖
         # 如果草少兔子多，按照最多能被吃掉的草数量吃，其他兔子等着
         y = min(2 * (cls._count // 2), 2 * (x // 2))
         z = y // 2
-        eating.eaten(y)
+        food.eaten(y)
         cls._count += z
 
     @classmethod
-    def populate_cleverly(cls, eating=None):
-        x = eating.can_be_eaten()
+    def populate_cleverly(cls, food=Grass):
+        x = food.can_be_eaten()
         # 只能吃偶数个，不能吃奇数个，于狼类似，但是草每天繁殖一次
         # (x - y) * 2 * 2 = y * 2 + y => x = 7 * y / 4
         if x < cls._count * 7 / 4:
@@ -181,7 +181,7 @@ class Rabbit(Grassland):
         # 取偶数，确保不会生出半只狼出来
         y = 2 * (y // 2)
         z = y // 2
-        eating.eaten(y)
+        food.eaten(y)
         cls._count += z
 
 
@@ -189,19 +189,19 @@ class Wolf(Grassland):
     _count = 0
 
     @classmethod
-    def populate(cls, eating=Rabbit):
-        x = eating.can_be_eaten()
+    def populate(cls, food=Rabbit):
+        x = food.can_be_eaten()
         # 只能吃偶数个，不能吃奇数个
         # 如果兔子多狼少，按照狼最多能吃掉的数量吃，其他兔子继续繁殖
         # 如果兔子少狼多，按照最多能被吃掉的兔子数量吃，其他狼等着
         y = min(2 * (cls._count // 2), 2 * (x // 2))
         z = y // 2
-        eating.eaten(y)
+        food.eaten(y)
         cls._count += z
 
     @classmethod
-    def populate_cleverly(cls, eating=None):
-        x = eating.can_be_eaten()
+    def populate_cleverly(cls, food=None):
+        x = food.can_be_eaten()
         # 只能吃偶数个，不能吃奇数个
         # 假设狼王是聪明的并且是公平的，每一次繁殖时都可以让所有的狼进行，
         # 在每次决定吃多少兔子时，令兔子，狼，和要吃掉兔子的数量分别为 x, y, z
@@ -217,7 +217,7 @@ class Wolf(Grassland):
         # 取偶数，确保不会生出半只狼出来
         y = 2 * (y // 2)
         z = y // 2
-        eating.eaten(y)
+        food.eaten(y)
         cls._count += z
 
 
@@ -228,7 +228,7 @@ class ProblemTwo(object):
 
     @classmethod
     def function1(cls, g, r, w):
-        """假设狼是贪婪的，只要有兔子吃就吃，不考虑可持续发展"""
+        """假设狼和兔子都是贪婪的，只要有得吃就吃，不考虑可持续发展"""
         Grass.initialize(g)
         Rabbit.initialize(r)
         Wolf.initialize(w)
