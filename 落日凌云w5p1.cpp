@@ -25,7 +25,7 @@
 //* 例子 :
 //* 	输入 : "abc" 输出：4
 //* 	输入 : "zxy" 输出 : 73
-//* 	输入 : "cccdca" 输出：14
+//* 	输入 : "cccdca" 输出：17
 
 #include <iostream>
 #include <vector>
@@ -50,10 +50,6 @@ void Preprocessor(std::vector<std::string> &vs)
 
 void Calculator(std::vector<std::string> &vs)
 {
-	std::vector<std::string> Unique_vs(vs);
-	auto AfterUnique = std::unique(Unique_vs.begin(), Unique_vs.end());
-	Unique_vs.erase(AfterUnique, Unique_vs.end());
-
 	std::map<std::string, int> TransMap;
 	std::vector<std::string> letters{ "a", "b", "c", "d", "e", "f", "g", "h",
 		"i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v",
@@ -70,9 +66,9 @@ void Calculator(std::vector<std::string> &vs)
 	unsigned int Total = 0;
 	for (auto temp : vs)
 	{
-		int Multiplier1 = -1;
-		for (auto Position = std::find(Unique_vs.begin(), Unique_vs.end(), temp);
-		Position < Unique_vs.end(); Position++)
+		int Multiplier1 = 0;
+		for (auto Position = std::find(vs.rbegin(), vs.rend(), temp);
+		Position > vs.rbegin(); Position--)
 		{
 			Multiplier1++;
 		}
