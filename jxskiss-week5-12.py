@@ -200,7 +200,7 @@ class Wolf(Grassland):
         cls._count += z
 
     @classmethod
-    def populate_cleverly(cls, food=None):
+    def populate_cleverly(cls, food=Rabbit):
         x = food.can_be_eaten()
         # 只能吃偶数个，不能吃奇数个
         # 假设狼王是聪明的并且是公平的，每一次繁殖时都可以让所有的狼进行，
