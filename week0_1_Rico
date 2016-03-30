@@ -1,0 +1,39 @@
+#include "stdio.h"
+
+//商品量不大，用插入排序即可。
+void insertSort(int *list, int length){
+    int i, j, tmp;
+    for (i = 1; i < length; i++){
+        if (list[i - 1] > list[i])
+        {
+            tmp = list[i];
+            j = i;
+            while(j != 0 && list[j - 1] > tmp) {
+                list[j] = list[j - 1];
+                j--;
+            }
+            list[j] = tmp;
+        }
+    }
+}
+
+int function(int x,int array[],int length){
+    int num = 0, i;
+    insertSort(array, length);
+    for (i = 0; i < length; i++){
+        if(x >= array[i]){
+            num += 1;
+            x -= array[i];
+        }
+    }
+    return num; 
+}
+
+int main(int argc, char const *argv[])
+{
+    int res, x = 5, length = 5;
+    int a[] = {3,8,1,2,3};
+    res = function(x, a, length);
+    printf("%d\n", res);
+    return 0;
+}
