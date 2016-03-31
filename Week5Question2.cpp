@@ -40,7 +40,7 @@ void Consumer::Reproduce(Consumer &ca, Consumer &cb,int &i)
 {
 	//* 第一天的繁殖 || 以后繁殖
 	if ((i == 1 && cb.FirstDayReproduction && ca.isAvailable(ca, cb)) ||
-		((i - 1) % cb.Interval == 0 && ca.isAvailable(ca, cb)))
+		(i != 1 && (i - 1) % cb.Interval == 0 && ca.isAvailable(ca, cb)))
 	{
 		//如果一级消费者能够供给所有二级消费者繁殖
 		if ((ca.Amount - 2) >= (cb.Amount / 2 * 2))
@@ -68,7 +68,7 @@ void Consumer::Reproduce(Autotroph &a, Consumer &c,int &i)
 {
 	//第一天繁殖 || 以后的繁殖
 	if ((i == 1 && c.FirstDayReproduction && a.isAvailable(a)) ||
-		((i - 1) % c.Interval == 0 && a.isAvailable(a)))
+		(i != 1 && (i - 1) % c.Interval == 0 && a.isAvailable(a)))
 	{
 		//如果生产者能够供给所有一级消费者繁殖
 		if ((a.itsAmount(a) - 2) >= (c.Amount / 2 * 2))
