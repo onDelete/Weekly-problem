@@ -13,16 +13,18 @@ class Autotroph
 {
 public:
 	friend int Calculator(Autotroph &a, Consumer &ca, Consumer &cb, int &No);
-	Autotroph(int a,bool f):Amount(a),FirstDayReproduction(f) {}
-	Autotroph(int a):Amount(a),FirstDayReproduction(true) {}
+	Autotroph(int a) :Amount(a), Interval(1), FirstDayReproduction(true) {}
+	Autotroph(int a, int i) :Amount(a), Interval(i), FirstDayReproduction(true) {}
+	Autotroph(int a, int i,bool f) :Amount(a), Interval(i), FirstDayReproduction(f) {}
 	Autotroph(const Autotroph &) = default;
 	Autotroph& operator=(const Autotroph &) = default;
 	~Autotroph() = default;
 	void Reproduce(Autotroph &a, int &i);
 	bool isAvailable(Autotroph &a);
-	int& itsAmount(Autotroph &a);
+	int& itsAmount();
 private:
 	int Amount;
+	int Interval;
 	bool FirstDayReproduction;
 };
 
