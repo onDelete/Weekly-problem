@@ -12,7 +12,6 @@ class Consumer;
 class Autotroph
 {
 public:
-	friend int Calculator(Autotroph &a, Consumer &ca, Consumer &cb, int &No);
 	Autotroph(int a) :Amount(a), Interval(1), FirstDayReproduction(true) {}
 	Autotroph(int a, int i) :Amount(a), Interval(i), FirstDayReproduction(true) {}
 	Autotroph(int a, int i,bool f) :Amount(a), Interval(i), FirstDayReproduction(f) {}
@@ -31,7 +30,6 @@ private:
 class Consumer
 {
 public:
-	friend int Calculator(Autotroph &a, Consumer &ca, Consumer &cb, int &No);
 	Consumer(int a, int i) :Amount(a), Level(1), Interval(i), FirstDayReproduction(true) {}
 	Consumer(int a, int l, int i) :Amount(a), Level(l), Interval(i), FirstDayReproduction(true) {}
 	Consumer(int a, int l, int i, bool f) :Amount(a), Level(l), Interval(i), FirstDayReproduction(f) {}
@@ -41,6 +39,7 @@ public:
 	void Reproduce(Consumer &ca, Consumer &cb, int &i);
 	void Reproduce(Autotroph &a, Consumer &c, int &i);
 	bool isAvailable(Consumer &ca, Consumer &cb);
+	int& itsAmount();
 private:
 	int Amount;
 	int Level;
