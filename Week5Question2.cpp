@@ -28,14 +28,6 @@ int& Autotroph::itsAmount()
 	return Amount;
 }
 
-bool Consumer::isAvailable(Consumer &ca, Consumer &cb)
-{
-	if (ca.Level < cb.Level && ca.Amount > 2)
-		return true;
-	else
-		return false;
-}
-
 void Consumer::Reproduce(Consumer &ca, Consumer &cb, int &i)
 {
 	//* 第一天的繁殖 || 以后繁殖
@@ -55,6 +47,12 @@ void Consumer::Reproduce(Consumer &ca, Consumer &cb, int &i)
 			ca.Amount = ca.Amount - (ca.Amount - 2) / 2 * 2;
 		}
 	}
+	//以后的繁殖
+	//if ((i - 1) % cb.Interval == 0 && ca.isAvailable(ca, cb))
+	//{
+	//	ca.Amount = ca.Amount - cb.Amount / 2 * 2;
+	//	cb.Amount = cb.Amount + cb.Amount / 2;
+	//}
 }
 
 void Consumer::Reproduce(Autotroph &a, Consumer &c, int &i)
@@ -76,12 +74,30 @@ void Consumer::Reproduce(Autotroph &a, Consumer &c, int &i)
 			a.itsAmount() = a.itsAmount() - (a.itsAmount() - 2) / 2 * 2;
 		}
 	}
+	//if ((i - 1) % c.Interval == 0 && a.isAvailable(a))
+	//{
+	//	a.itsAmount(a) = a.itsAmount(a) - c.Amount / 2 * 2;
+	//	c.Amount = c.Amount + c.Amount / 2;
+	//}
+}
+
+bool Consumer::isAvailable(Consumer &ca, Consumer &cb)
+{
+	if (ca.Level < cb.Level && ca.Amount > 2)
+		return true;
+	else
+		return false;
+}
+
+int& Consumer::itsAmount()
+{
+	return Amount;
 }
 
 int Calculator(Autotroph &a, Consumer &ca, Consumer &cb, int &No)
 {
 	int i = 1;
-	for (; cb.Amount < No; i++)
+	for (; cb.itsAmount() < No; i++)
 	{
 		cb.Reproduce(ca, cb, i);
 		ca.Reproduce(a, ca, i);
