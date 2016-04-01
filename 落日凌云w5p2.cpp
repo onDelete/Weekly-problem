@@ -32,9 +32,15 @@
 
 int main()
 {
+	int Calculator(Autotroph &a, Consumer &ca, Consumer &cb, int &No);
+
+	//* 数量；繁殖间隔（默认一天）；第一天是否可繁殖（默认是）
 	Autotroph Glass(5);
+
+	//* 数量；消费者等级（默认一级）；繁殖间隔（默认一天）；第一天是否可繁殖（默认是）
 	Consumer Rabbits(33, 2);
 	Consumer Wolves(3, 2, 3);
+
 	std::cout << "顶级消费者数量：";
 	int n;
 	std::cin >> n;
