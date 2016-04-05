@@ -25,11 +25,11 @@
 	BingG-5
 	HeGuozhu-5
 	清水-5
+	jxskiss-4
 	ych-4
 	setmsky-3
 	Epona-3
 	路歌-3
-	jxskiss-3
 	郑智-2
 	才子-2
 	abirdcfly-2
@@ -39,8 +39,10 @@
 	xjs-js-2
 	明月-2
 	郑智-2
+	Rico-1
+	wtlusvm-1
 	Lee-哈尔滨-1
-	落日凌云-1
+	落日凌云-2
 	浮生-1
 	肆风-1
 	Arkowen-1
